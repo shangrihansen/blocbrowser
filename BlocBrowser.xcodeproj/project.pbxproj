@@ -12,6 +12,7 @@
 		B3F720C519FCABEB004BBFB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F720C419FCABEB004BBFB9 /* Images.xcassets */; };
 		B3F720C819FCABEB004BBFB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F720C619FCABEB004BBFB9 /* LaunchScreen.xib */; };
 		B3F720D419FCABEB004BBFB9 /* BlocBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F720D319FCABEB004BBFB9 /* BlocBrowserTests.m */; };
+		B3F720DF19FCACBD004BBFB9 /* BLCWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F720DE19FCACBD004BBFB9 /* BLCWebBrowserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		B3F720CD19FCABEB004BBFB9 /* BlocBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F720D219FCABEB004BBFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F720D319FCABEB004BBFB9 /* BlocBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocBrowserTests.m; sourceTree = "<group>"; };
+		B3F720DD19FCACBD004BBFB9 /* BLCWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCWebBrowserViewController.h; sourceTree = "<group>"; };
+		B3F720DE19FCACBD004BBFB9 /* BLCWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCWebBrowserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				B3F720C419FCABEB004BBFB9 /* Images.xcassets */,
 				B3F720C619FCABEB004BBFB9 /* LaunchScreen.xib */,
 				B3F720BD19FCABEB004BBFB9 /* Supporting Files */,
+				B3F720DD19FCACBD004BBFB9 /* BLCWebBrowserViewController.h */,
+				B3F720DE19FCACBD004BBFB9 /* BLCWebBrowserViewController.m */,
 			);
 			path = BlocBrowser;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			files = (
 				B3F720C319FCABEB004BBFB9 /* AppDelegate.m in Sources */,
 				B3F720C019FCABEB004BBFB9 /* main.m in Sources */,
+				B3F720DF19FCACBD004BBFB9 /* BLCWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
