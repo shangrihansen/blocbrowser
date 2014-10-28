@@ -61,6 +61,8 @@
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
     
+    self.awesomeToolbar.frame = CGRectMake(50, 120, 280, 60);
+    
     // Do any additional setup after loading the view.
 }
 
@@ -76,7 +78,7 @@
     self.textField.frame = CGRectMake(0, 0, width, itemHeight);
     self.webview.frame = CGRectMake(0, CGRectGetMaxY(self.textField.frame), width, browserHeight);
     
-    self.awesomeToolbar.frame = CGRectMake(50, 120, 280, 60);
+    NSLog(@"%s[%d] ", __PRETTY_FUNCTION__, __LINE__);
 }
 
 #pragma mark - BLCAwesomeFloatingToolbarDelegate
@@ -92,6 +94,30 @@
         [self.webview reload];
     }
 }
+
+- (void) floatingToolbar:(BLCAwesomeFloatingToolbar *)toolbar didTryToPanWithOffset:(CGPoint)offset {
+    CGPoint startingPoint = toolbar.frame.origin;
+    CGPoint newPoint = CGPointMake(startingPoint.x + offset.x, startingPoint.y + offset.y);
+    
+    CGRect potentialNewFrame = CGRectMake(newPoint.x, newPoint.y, CGRectGetWidth(toolbar.frame), CGRectGetHeight(toolbar.frame));
+    
+    if (CGRectContainsRect(self.view.bounds, potentialNewFrame)) {
+        toolbar.frame = potentialNewFrame;
+    }
+}
+
+- (void) floatingToolbar:(BLCAwesomeFloatingToolbar *)toolbar didTryToPinchWithScale:(CGFloat)scale {
+    CGRect potentialFrame = CGRectMake(toolbar.frame.origin.x, toolbar.frame.origin.y, toolbar.frame.size.width * scale, toolbar.frame.size.height * scale);
+    
+    NSLog(@"%f, %f, %f, %f, %f, %f, %f, %f", toolbar.frame.origin.x, toolbar.frame.origin.y, toolbar.frame.size.width, toolbar.frame.size.height, potentialFrame.origin.x, potentialFrame.origin.y, potentialFrame.size.width, potentialFrame.size.height);
+    
+    CGSize min = CGSizeMake(140, 30);
+    
+    if (CGRectContainsRect(self.view.bounds, potentialFrame)&& (potentialFrame.size.width > min.width || potentialFrame.size.height > min.height)) {
+        toolbar.frame = potentialFrame;
+    }
+}
+
 
 #pragma mark - UITextFieldDelegate
 
